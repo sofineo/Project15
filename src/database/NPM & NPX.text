@@ -1,0 +1,18 @@
+NPM 
+
+Node Package Manager 
+É o gerenciador de pacotes padrão para Node.js
+Os pacotes e módulos necessários no projeot Node são instalados usando npm.
+E também utilizamos o npm para executar scripts e bibliotecas instalados
+
+NPX
+
+Node Package Execute 
+Vem com o npm acima da versão 5.2
+
+É um executor de pacotes npm que pode executa qualquer pacote que você quiser do registro npm sem sequer instalar esse pacote
+
+RESUMINDO
+
+NPM é uma ferramenta que usa para INSTALAR pacotes
+NPX é uma ferramenta que usa para EXECUTAR pacotes

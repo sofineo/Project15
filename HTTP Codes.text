@@ -1,0 +1,22 @@
+HTTP Codes or Status Codes
+
+1xx Informativo
+  102 Processando
+
+2xx Sucesso
+  200 Requisição bem sucedida
+  201 Criado - geralmente utilizado para o POST após uma inserção
+
+3xx Redirecionamento
+  301 Movido permanentemente
+  302 Movido
+
+4xx Erro do cliente
+  400 Bad Request
+  401 Unauthorized
+  404 Not Found
+
+5xx Erro no servidor - o servidor falhou ao concluir a solicitação
+  500 Erro interno
+
+.status(code)

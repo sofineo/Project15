@@ -1,0 +1,73 @@
+SQLite
+Structured Query Language
+Linguagem de consulta estruturada
+
+Linguagem padrão para banco de dados relacionais
+
+Comandos DDL - Data Definition Language:
+CREATE - criar uma tabela
+DROP - deletar 
+ALTER - atualizar
+
+CREATE TABLE users (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR,
+  email VARCHAR,
+  password VARCHAR,
+  avatar VARCHAR NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+ALTER TABLE users
+RENAME TO clients
+
+ALTER TABLE clients
+RENAME TO users 
+
+ALTER TABLE users
+RENAME COLUMN status TO active
+
+ALTER TABLE users
+ADD status VARCHAR
+
+ALTER TABLE users
+DROP COLUMN active
+
+Comandos DML = Data Manipulation Language
+C - Create -> INSERT
+R - Read -> SELECT
+U - Update -> UPDATE
+D - Delete -> DELETE
+
+Qualquer aplicação vai usar essas 4 operações CRUD
+
+MIGRATION - automatização de criação de tabela
+
+SQL Query Builder
+Query Builder é um Construtor de consulta
+O Query Builder permite que você construa instruções SQL independente do banco de dados utilizado
+
+Utiliza-se na síntexe da query Builder que ela escreverá o SQL compatível do Banco de dados
+KNEX.JS é a Query Builder que iremos utilizar
+
+knexjs.org
+npm install knex --save
+Para fazer o knex conectara com o database:
+npx knex init
+
+no arquivo knexfile.js configurar para ficar assim;
+
+const path = require("path")
+
+module.exports = {
+  development: {
+    client: 'sqlite3',
+    connection: {
+      filename: path.resolve(__dirname, "src", "database", "database.db")
+    },
+    useNullAsDefault: true
+  },
+};
+
+Criar a pasta knex dentro da pasta database e criar o index.js com as configurações do arquivo

@@ -1,0 +1,37 @@
+Banco de Dados / Data Base
+é uma coleção de dados
+
+O banco de dados é composto por tabelas
+
+Cada tabela armazena assuntos / dados específicos. Organizando dados por assunto
+
+Dentro da tabela temos colunas e linhas pra organizar o conteúdo interno da tabela
+
+título da tabela é único para identificação
+
+cada linha terá o nome da coluna e qual tipo do dado que será armazenado
+quando tem ? significa que é opcional
+
+Esse estilo de banco de dados é chamadao de Banco de dados Relacional, pois as tabelas se relacionam com as outras tabelas
+
+key primary - chave primária identifica o registro como único, não podendo se repetir
+
+foreigner key - chave estrangeira o dado vem de outra tabela, não foi gerado nesta tabela, apenas está sendo reutilizado 
+
+cardinalidade - qual a frequência que uma tabela se relaciona com outra 
+
+Recomendação - sempre que possível, utilize pro tipo de dado para o ID int (integer / inteiro)
+
+varchar - armazena texto
+
+Sqlight é um banco de dados relacional 
+npm install sqlite3 sqlite --save  (por ser uma dependência de produção)
+
+Não é possível ver o database.db pelo VSCode nem é recomendado,. Utiliza-se o SGBD - sistema gerenciador de Banco de Dados - recemndação beekeeper studio
+
+Entities = tabela = table
+
+nomes das tabelas ser em minúsculo e no plural
+
+Comandos sql sugere-se escrever em maiúsculo e nomeações que estamos fazendo em minúsculo
+

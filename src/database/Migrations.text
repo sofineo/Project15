@@ -1,0 +1,31 @@
+Migrations
+
+É uma forma de versionar a base de dados.
+
+Migrations trabalha na manipulação da base de dados: criando, alterando ou removendo
+
+A lógica é parecida com o Git
+
+Ter histórico de alterações:
+
+cria uma tabela dentro do banco aonde armazenará todo o histórico de alterações 
+
+Sempre terá dois métodos:
+Métodos de uma Migrations
+
+UP: método responsável por criar ou alterar algo no banco de dados
+
+DOWN: responsável pelo rollback. Ou seja, desfazer as alterações realizdas pela Migration
+
+No knexfile.js adicionar :
+
+    migration: {
+      directory: path.resolve(__dirname, "src", "database", "knex", "migrations")
+    }
+
+npx knex migrate:make nameOfMigration
+
+Para rodar uma migration e executar:
+npx knex migrate:latest 
+
+fazer um scrpit no package.json pra rodar com npm run migrate
