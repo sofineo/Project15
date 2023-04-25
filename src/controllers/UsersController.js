@@ -47,10 +47,11 @@ Se precisar criar mais de 5 métodos, vale a pena analisar e criar um controller
 
   async update(request, response) {
     const { name, email, password, old_password} = request.body
-    const { id } = request.params
+    // const { id } = request.params //como temos já o id incorporado nas requisições, não é necessário mais buscar pelo parametro
+    const user_id = request.user.id
 
     const database = await sqliteConnection()
-    const user = await database.get("SELECT * FROM users WHERE id = (?)", [id])
+    const user = await database.get("SELECT * FROM users WHERE id = (?)", [user_id])
 
     if(!user) {
       throw new AppError("Usuário não encontrado")
@@ -88,7 +89,7 @@ Se precisar criar mais de 5 métodos, vale a pena analisar e criar um controller
     password = ?,
     updated_at = DATETIME('now')
     WHERE id = ?`,
-    [user.name, user.email, user.password, id]
+    [user.name, user.email, user.password, user_id]
     )
 
     return response.status(200).json()

@@ -1,7 +1,7 @@
 const { Router } = require("express")
 
 const UsersController = require("../controllers/UsersController")
-
+const ensureAuthenticated = require("../middleware/ensureAuthenticated")
 const usersRoutes = Router()
 
 //Exemplo de Middleware
@@ -24,7 +24,7 @@ const usersController = new UsersController()
 // usersRoutes.post("/", myMiddleware, usersController.create)
 
 usersRoutes.post("/", usersController.create)
-usersRoutes.put("/:id", usersController.update)
+usersRoutes.put("/", ensureAuthenticated,usersController.update) //como no middleware já tem o id, não será mais necessário /:id
 
 
 

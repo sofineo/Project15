@@ -1,0 +1,20 @@
+Jwt
+JSON Web Token
+
+O que é:
+É um padrão de mercado que define um token no formato JSON para a troca de informações.
+
+Importante!
+JWT não representa o mecanismo de autenticação. Mas é um meio para a troca de informações no fluxo de autenticação.
+
+Composição de um Token JWT
+hash composto por três partes:
+Header . Payload . Verify signature
+
+Header: algorithm & token type
+Payload: Data - conteúdo do token // geralmente só o ID é necessário
+Verify signature: garante a integridade do token 
+
+Usamos a biblioteca jsonwebtoken
+
+cria-se a pasta configs com auth.js para criação e utilização do token
