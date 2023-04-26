@@ -1,0 +1,12 @@
+Manipulação de arquivos
+
+Usamos o módulo fs do Node.js
+
+O módulo fs permite trabalhar e manipular arquivos.
+
+função rename: renomear ou mover o arquivos - sendo um promessa, pois leva um tempo
+parâmetros: aonde está, aonde quer ir
+
+stat - verificar qual é o estado do arquivo, se aberto, corrompido..
+
+unlink - basicamente remove o arquivo

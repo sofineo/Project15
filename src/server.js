@@ -10,7 +10,7 @@
 require("express-async-error")
 require("express-async-errors")
 const AppError = require("./utils/AppError")
-
+const uploadConfig = require("./configs/upload")
 
 
 const migrationsRun = require("./database/sqlite/migrations")
@@ -29,6 +29,8 @@ const app = express();
 
 //para receber as coisas em JSON no método post para receber as informações do body
 app.use(express.json())
+
+app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER))
 
 app.use(routes)
 
