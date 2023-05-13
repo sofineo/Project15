@@ -11,7 +11,7 @@ class SessionsController {
     const { email, password } = request.body
 
     const user = await knex("users")
-.where({ email }).first()    
+.where({ email }).first()
 
     if(!user) {
       throw new AppError("Email or password incorrect", 401)

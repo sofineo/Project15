@@ -13,6 +13,7 @@ const AppError = require("./utils/AppError")
 const uploadConfig = require("./configs/upload")
 
 
+
 const migrationsRun = require("./database/sqlite/migrations")
 
 //importar a express
@@ -25,7 +26,11 @@ const routes = require("./routers")
 migrationsRun()
 
 //para conseguir inicializar o express que nos ajuda a gerenciar as requisições http
+
+const cors = require("cors")
 const app = express();
+
+app.use(cors())
 
 //para receber as coisas em JSON no método post para receber as informações do body
 app.use(express.json())

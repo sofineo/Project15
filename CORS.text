@@ -1,0 +1,11 @@
+CORS é a biblioteca que ajudará a conectar o front com o back end
+
+CORS = CROSS ORIGEN RESEARCH SHARE
+compartilhamento de recursos de origem diferente
+
+Habilitar as requisições do front-end para  back-end
+
+importar o cors no server.js e utilizar com o app
+
+AXIOS - biblioteca para trabalhar com requisições HTTP 
+criar na scr uma pasta chamada service com api.js aonde será feito as configurações do axios
