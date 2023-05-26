@@ -6,9 +6,10 @@
 
 //a camada server é o ponto de entrada da nossa aplicação, quando um requisição chega nele, vai passar pelas rotas (routes) para que seja identificado qual o controller que será executado, o que o usuário está pedindo. Então, baseado na rota, no caminho, no endereço, irá será entregue para um determinado controller, que irá executar a requisição, que devolver pra rota que por fim saberá pra quem deve devolver através do server.js
 
-
-require("express-async-error")
 require("express-async-errors")
+require("dotenv/config")
+
+
 const AppError = require("./utils/AppError")
 const uploadConfig = require("./configs/upload")
 
@@ -92,7 +93,7 @@ app.use(( error, request, response, next) => {
   
 
 //informar qual porta 
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 
 app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
 
